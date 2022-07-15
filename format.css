@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/* This file is meant to make the template that will apply to all pages */
+
+/* Main Structure (i.e. left column + right column) */
+
+html {
+    background-color: #1e1e1e;
+    
+}
+
+h2 {
+    font-variant: small-caps;
+    font-weight: normal;
+}
+
+body {
+    display: grid;
+    width: 99%;
+    grid-template-columns: 12% 88%;  /* Fluid Grid for entire page */
+    grid-template-areas: "left right";
+
+    color: #CCCCCC;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Sidebar */
+
+div#leftCol {
+    box-sizing: border-box;
+    height: 98vh;
+    grid-area: left;
+    padding-left: 10px;
+    background-color: #252526;
+    
+    overflow-x: hidden;  /* Hide overflow for when window is smaller; Prevents overlap */
+}
+
+div#leftCol::-webkit-scrollbar, div#rightCol::-webkit-scrollbar  {  /* Remove scrollbars for overflow */
+    display: none;
+}
+
+/* Site Pages */
+
+nav#siteNav > ul {
+    list-style: none;
+    padding: 0px;
+    font-size: medium;
+    line-height: 2em;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav#siteNav a:link, nav#siteNav a:visited {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+nav#siteNav a:hover { color: gray; }
+
+nav#siteNav a:active { color: #c3916a; }
+
+nav#siteNav a#current {  /* Underline the current page the user is on */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #CCCCCC;
+}
+
+/* Socials Links */
+
+div#socials {
+    margin-top: 40vh;
+}
+
+nav#navSocials > ul {
+    list-style: none;
+    padding: 0px;
+    
+    font-size: small;
+    line-height: 1.75em;
+    text-decoration: none;
+}
+
+nav#navSocials a:link, nav#navSocials a:visited {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+nav#navSocials a:hover { color: gray; }
+
+nav#navSocials a:active { color: #c3916a; }
+
+/* Main Content */
+
+main {
+    box-sizing: border-box;
+    height: 98vh;
+    width: 99%;
+    margin: auto;
+    
+    display: grid;
+    grid-template-rows: 15% 85%;  /* Fluid Grid for main content */
+    grid-area: right; 
+}
+
+main#home {
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 45% 45%;  /* Fluid Grid for Home page */
+    grid-template-areas:    "title title" 
+                            "text  photo";
+}
+
+main#home > header {
+    grid-area: title;
+    font-size: 2.5em;
+    line-height: 0;
+}
+
+div#homeText {
+    grid-area: text;
+    justify-self: center;
+}
+
+div#homePhoto {
+    grid-area: photo;
+    justify-self: center;
+}
+
+/* body > * { outline: 1px dashed blue; }
+main > * { outline: 2px dashed red; } */
