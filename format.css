@@ -99,22 +99,27 @@ main {
     margin: auto;
     
     display: grid;
-    grid-template-rows: 15% 85%;  /* Fluid Grid for main content */
     grid-area: right; 
-}
 
-main#home {
     justify-content: center;
     align-items: center;
-    grid-template-columns: 45% 45%;  /* Fluid Grid for Home page */
-    grid-template-areas:    "title title" 
-                            "text  photo";
+
+    overflow: auto;
 }
 
-main#home > header {
+main > header {
     grid-area: title;
     font-size: 2.5em;
     line-height: 0;
+}
+
+/* Home Page */
+
+main#home {
+    grid-template-columns: 45% 45%;  /*Fluid Grid for Home page*/
+    grid-template-rows: 15% 85%;
+    grid-template-areas:    "title title" 
+                            "text  photo";
 }
 
 div#homeText {
@@ -126,6 +131,145 @@ div#homePhoto {
     grid-area: photo;
     justify-self: center;
 }
+
+/* Portfolio Page */
+
+main#portfolio {
+    grid-template-columns: 45% 45%;  /* Fluid Grid for Portfolio page */
+    grid-template-rows: 15% 10% 45% 30%;
+    grid-template-areas:    "title  title"
+                            "text   text"
+                            "photos photos"
+                            "form   form";
+}
+
+div#portfolioPhotos {
+    display: grid;
+    grid-template-areas: "leftPhoto midPhoto rightPhoto";
+    justify-content: center;
+    gap: 4vh;
+    grid-area: photos;
+}
+
+p#portfolioParagraph {
+    grid-area: text;
+    text-align: center;
+}
+
+div#portfolioPhoto1 { grid-area: leftPhoto; }
+div#portfolioPhoto2 { grid-area: midPhoto; }
+div#portfolioPhoto3 { grid-area: rightPhoto; }
+
+form#portfolioForm {
+    justify-self: center;
+    grid-area: form;
+    width: 80%;
+}
+
+div.formRow {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5px 0px;
+}
+
+div.formRow > * {
+    flex: 1 1 150px;
+}
+
+textarea { resize: none; }
+
+div#buttons { text-align: center; }  /* Formatting for buttons */
+
+input[type='submit'], input[type='reset'], 
+input::-webkit-file-upload-button, input::file-selector-button {  /* Styling for buttons */
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+
+
+    background-color: #252526;
+    color: #CCCCCC;
+
+    font-weight: bold;
+
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+
+}
+
+input[type='submit']:hover, input[type='reset']:hover, 
+input::-webkit-file-upload-button:hover, input::file-selector-button:hover { 
+    color: gray;
+    border: 1px solid gray;
+}
+
+input[type='submit']:active, input[type='reset']:active, 
+input::-webkit-file-upload-button:active, input::file-selector-button:active { 
+    color: #c3916a;
+    border: 1px solid #c3916a;
+}
+
+/* Gear Page */
+
+main#gear {
+    grid-template-columns: 30% 30% 30%;  /* Fluid Grid for Home page */
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas:    "title  title   title"
+                            "photos photos  photos"
+                            "form   form    form"
+}
+
+div#gearPhotos {  /* Structure for photo gallery */
+    display: grid;
+    justify-content: center;
+    
+    grid-template-areas: "leftPhoto midPhoto rightPhoto";
+    grid-template-columns: 300px 300px 300px;
+    gap: 50px;
+    
+    grid-area: photos;
+}
+
+div#gearPhotos .gearPhoto {
+    border: 1px solid #CCCCCC;
+    justify-self: center;
+}
+
+div#gearPhotoLeft
+{
+    grid-area: leftPhoto;
+}
+
+div#gearPhotoMid
+{
+    grid-area: midPhoto;
+}
+
+div#gearPhotoRight
+{
+    grid-area: rightPhoto;
+}
+
+div#gearPhotoLeft, div#gearPhotoMid, div#gearPhotoRight {
+    text-align: center;
+}
+
+p.gearDesc {
+    margin: 5px 5px 5px 5px;
+    width: 95%;
+}
+
+/* Tips & Tricks */
+
+main#tips {
+    grid-template-columns: 45% 45%;  /* Fluid Grid for Tips page */
+    grid-template-rows: 15% 10% 37.5% 37.5%;
+    grid-template-areas:    "title      title"
+                            "text       text"
+                            "leftPhoto1 rightPhoto1"
+                            "leftPhoto2 rightPhoto2";
+}
+
 
 /* body > * { outline: 1px dashed blue; }
 main > * { outline: 2px dashed red; } */

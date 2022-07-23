@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- The following HTML file is for Project 2 for CIS 162. -->
+    <title>Portfolio</title>
+    <meta charset="utf-8" />  <!-- Basic metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="format.css" rel="stylesheet" />
+</head>
+
+<body>
+    
+    <div id="leftCol">
+        <header>
+            <h2> <i class="fa fa-camera-retro"></i> Agustin A </h2>
+            <nav id="siteNav">
+            <ul>
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a id="current" href="portfolio.html">Portfolio</a> </li>
+                <li> <a href="gear.html">Gear</a> </li>
+                <li> <a href="tips.html">Tips & Tricks</a> </li>
+            </ul>
+            </nav>
+        </header>
+        <div id="socials">
+            <h2> Socials </h2>
+            <nav id="navSocials">
+            <ul>
+                <li> <a href="https://www.instagram.com/cerritoscollege/?hl=en"> <i class="fa fa-instagram"></i>&nbsp;Instagram</a> </li>
+                <li> <a href="https://twitter.com/cerritoscollege?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <i class="fa fa-twitter  "></i>&nbsp;Twitter</a> </li>
+                <li> <a href="https://www.facebook.com/cerritoscollege/"> <i class="fa fa-facebook"></i>&nbsp;Facebook</a> </li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <main id="portfolio">
+        <header id="portfolioHeader">
+            <h1>Portfolio</h1>
+        </header>
+        
+        <p id="portfolioParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <div id="portfolioPhotos">
+            <div id="portfolioPhoto2"> <img src="placeholder.jpg" alt="Placeholder" height="250"> </div>
+            <div id="portfolioPhoto1"> <img src="placeholder.jpg" alt="Placeholder" height="250"> </div>
+            <div id="portfolioPhoto4"> <img src="placeholder.jpg" alt="Placeholder" height="250"> </div>
+        </div>
+
+        <form id="portfolioForm">
+        <fieldset id="portfolioField">
+            <legend>Want to work with me?</legend>
+
+            <div class="formRow">
+            <label for="portfolioName">Name*:</label>
+            <input name="name" id="portfolioName" type="text" required>
+            </div>
+
+            <div class="formRow">
+            <label for="portfolioNum">Phone Number*:</label>
+            <input name="number" id="portfolioNum" type="tel" placeholder="(XXX)-XXX-XXXX" required>
+            </div>
+            
+            <div class="formRow">
+            <label for="portfolioEmail">Email*:</label>
+            <input name="email" id="portfolioEmail" type="email" placeholder="XXXXXXXXXXXX@domain.com"  required>
+            </div>
+
+            <div class="formRow">
+            <label for="portfolioText">Tell Me About Yourself:</label>
+            <textarea name="text" id="portfolioText" rows="3"></textarea>
+            </div>
+
+            <div class="formRow">
+            <label for="portfolioImage">Share a Photo:</label>
+            <input name="image" id="portfolioImage" type="file">
+            </div>
+
+        </fieldset>
+
+        <div id="buttons">
+            <input type="submit" value="Submit information">
+            <input type="reset" value="Cancel">
+        </div>
+
+        </form>
+
+    </main>
+
+</body> 
+
+</html>
